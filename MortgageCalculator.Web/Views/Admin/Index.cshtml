@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="mortgageList" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Interest</th>
+            <th>StartDate</th>
+            <th>EndDate</th>
+            <th>EstablishmentFee</th>
+            <th>CancellationFee</th>
+            <th>TermsInMonths</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/Admin/admin.js")
+}
+
+
