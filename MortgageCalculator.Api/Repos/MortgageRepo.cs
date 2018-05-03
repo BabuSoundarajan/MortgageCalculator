@@ -8,6 +8,7 @@ namespace MortgageCalculator.Api.Repos
     public interface IMortgageRepo
     {
         List<Mortgage> GetAllMortgages();
+        int GetMonthDifference(DateTime startDate, DateTime endDate);
     }
 
     public class MortgageRepo : IMortgageRepo
@@ -27,9 +28,9 @@ namespace MortgageCalculator.Api.Repos
                         EffectiveEndDate = mortgage.EffectiveEndDate,
                         CancellationFee = mortgage.CancellationFee,
                         EstablishmentFee = mortgage.CancellationFee,
-                        InterestRepaymentType = mortgage.InterestRepayment.ToString(),
+                        InterestRepaymentType = (InterestRepayment)(mortgage.InterestRepayment),
                         MortgageId = mortgage.MortgageId,
-                        MortgageType = mortgage.MortgageType.ToString(),
+                        MortgageType = (MortgageType)mortgage.MortgageType,
                         InterestRate = mortgage.InterestRate,
                         TermsInMonths = GetMonthDifference(mortgage.EffectiveStartDate, mortgage.EffectiveEndDate)
                     });
@@ -38,7 +39,7 @@ namespace MortgageCalculator.Api.Repos
             }
         }
 
-        public static int GetMonthDifference(DateTime startDate, DateTime endDate)
+        public int GetMonthDifference(DateTime startDate, DateTime endDate)
         {
             int monthsApart = 12 * (startDate.Year - endDate.Year) + startDate.Month - endDate.Month;
             return Math.Abs(monthsApart);
