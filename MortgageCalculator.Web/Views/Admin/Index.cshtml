@@ -6,8 +6,9 @@
 }
 
 <h2>Mortgage List</h2>
+<br />
 
-<table class="table table-condensed table-bordered table-striped table-hover" id="mortgageList">
+<table class="table table-responsive table-bordered table-striped table-hover" id="mortgageList">
    <thead>
        <tr>
            <th>
@@ -24,9 +25,6 @@
            </th>
            <th>
                @Html.DisplayNameFor(model => model.EffectiveEndDate)
-           </th>
-           <th>
-               @Html.DisplayNameFor(model => model.TermsInMonths)
            </th>
            <th>
                @Html.DisplayNameFor(model => model.CancellationFee)
@@ -58,9 +56,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.EffectiveEndDate)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TermsInMonths)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CancellationFee)

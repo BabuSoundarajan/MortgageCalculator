@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MortgageCalculator.Web.Controllers
 {
+    [OutputCache(CacheProfile = "Cache24Hrs")]
     public class AdminController : Controller
     {
         // GET: Admin
@@ -46,42 +47,5 @@ namespace MortgageCalculator.Web.Controllers
 
             return View(mortgageList);
         }
-
-        //public ActionResult GetAllMortgages()
-        //{
-        //    IEnumerable<Mortgage> mortgage = null;
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("http://localhost:49608/api/");
-        //        client.DefaultRequestHeaders.Clear();
-        //        //Define request data format  
-        //        client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        //        //HTTP GET
-        //        var responseTask = client.GetAsync("Mortgage");
-        //        responseTask.Wait();
-
-
-
-        //        var result = responseTask.Result;
-        //        if (result.IsSuccessStatusCode)
-        //        {
-        //            var readTask = result.Content.ReadAsStringAsync();
-        //            readTask.Wait();
-
-
-        //            mortgage = JsonConvert.DeserializeObject<List<Mortgage>>(readTask.Result);
-        //        }
-        //        else //web api sent error response 
-        //        {
-        //            ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
-        //        }
-        //    }
-        //    var response = new
-        //    {
-        //        data = mortgage
-        //    };
-
-        //    return Json(response, JsonRequestBehavior.AllowGet);
-        //}
     }
 }

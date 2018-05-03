@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using MortgageCalculator.Api.Services;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using MortgageCalculator.Api.Services;
 
 namespace MortgageCalculator.Api.Controllers
 {
@@ -10,7 +10,7 @@ namespace MortgageCalculator.Api.Controllers
         // GET: api/Mortgage
         public IEnumerable<Dto.Mortgage> Get()
         {
-           var mortgageService = new MortgageService();
+            var mortgageService = new MortgageService();
             return mortgageService.GetAllMortgages();
         }
 
