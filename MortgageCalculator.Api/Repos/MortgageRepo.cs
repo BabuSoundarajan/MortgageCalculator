@@ -1,8 +1,7 @@
-﻿using System;
+﻿using MortgageCalculator.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using MortgageCalculator.Dto;
 
 namespace MortgageCalculator.Api.Repos
 {
@@ -28,13 +27,14 @@ namespace MortgageCalculator.Api.Repos
                         EffectiveEndDate = mortgage.EffectiveEndDate,
                         CancellationFee = mortgage.CancellationFee,
                         EstablishmentFee = mortgage.CancellationFee,
-                        InterestRepayment = (InterestRepayment)Enum.Parse(typeof(InterestRepayment), mortgage.MortgageType.ToString()),
+                        InterestRepaymentType = mortgage.InterestRepayment.ToString(),
                         MortgageId = mortgage.MortgageId,
-                        MortgageType = (MortgageType)Enum.Parse(typeof(MortgageType), mortgage.MortgageType.ToString()),
+                        MortgageType = mortgage.MortgageType.ToString(),
+                        InterestRate = mortgage.InterestRate,
                         TermsInMonths = GetMonthDifference(mortgage.EffectiveStartDate, mortgage.EffectiveEndDate)
                     });
                 }
-                return result;
+                return result.OrderBy(x => x.MortgageType).ThenBy(x => x.InterestRate).ToList();
             }
         }
 
