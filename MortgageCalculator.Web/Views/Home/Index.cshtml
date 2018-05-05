@@ -1,4 +1,6 @@
-﻿@{
+﻿
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -13,25 +15,10 @@
     </p>
 </div>
 
+@{
+    Html.RenderPartial("_Calculator");
+}
 
-<div class="row">
-    <div class="col-md-12">
-        <form class="form-horizontal">
-            <fieldset>
-
-                <!-- Form Name -->
-                <legend>Calculator</legend>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Borrowed Amount</label>
-                    <div class="col-md-4">
-                        <input id="textinput" name="textinput" type="text" placeholder="0.00" class="form-control input-md" required="">
-                        <span class="help-block">Enter the amount to borrow</span>
-                    </div>
-                </div>
-
-            </fieldset>
-        </form>
-    </div>
-</div>
+@section Scripts{
+    @Scripts.Render("~/Scripts/Calculator/calculator.js")
+}

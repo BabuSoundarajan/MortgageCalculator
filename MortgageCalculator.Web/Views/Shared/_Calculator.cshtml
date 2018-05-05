@@ -1,0 +1,23 @@
+﻿@model IEnumerable<MortgageCalculator.Dto.mortgageDropDownList>
+<form class="form">
+    <div class="row">
+        <div class="col-md-3 form-group">
+            <label class="control-label" for="amount">I would like to borrow</label>
+            <input class="form-control input-lg" type="text" id="amount" maxlength="25" data-allow-empty="true" data-precision="0" data-prefix="$" data-reverse="false" placeholder="e.g. 5000">
+        </div>
+        <div class="col-md-2 form-group">
+            <label class="control-label" for="amount">Over years of</label>
+            <input class="form-control input-lg numbers" type="text" maxlength="2" id="years" placeholder="e.g. 5">
+        </div>
+
+        <div class="col-md-5 form-group">
+            <label for="mortgageType" class="control-label">With a mortgage type</label>
+            @Html.DropDownList("mortgageType",new SelectList(Model,"Value","Text"),new {@class= "form-control mar-t-7" })
+            
+        </div>
+
+        <div class="col-md-2 form-group pad-t-35">
+            <a href="#" class="btn btn-warning btn-lg form-control">Get Estimate</a>
+        </div>
+    </div>
+</form>

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace MortgageCalculator.Web
 {
@@ -22,13 +21,16 @@ namespace MortgageCalculator.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
-            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
+            bundles.Add(new ScriptBundle("~/bundles/lib").Include(
+                "~/Scripts/Header/header.js",
                 "~/Scripts/DataTables/jquery.dataTables.js",
-                "~/Scripts/DataTables/dataTables.bootstrap.js"
+                "~/Scripts/DataTables/dataTables.bootstrap.js",
+                "~/scripts/MaskMoney/jquery.maskMoney.min.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-theme.css",
                       "~/Content/site.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css"));
         }

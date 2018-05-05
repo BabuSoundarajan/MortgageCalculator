@@ -20,5 +20,14 @@ namespace MortgageCalculator.Api.Controllers
             var mortgageService = new MortgageService();
             return mortgageService.GetAllMortgages().FirstOrDefault(x => x.MortgageId == id);
         }
+
+        // GET: api/MortgageDropDownList
+        [Route("api/MortgageDropDownList")]
+        public IEnumerable<Dto.mortgageDropDownList> GetMortgageDropDownList()
+        {
+
+            var mortgageService = new MortgageService();
+            return mortgageService.GetMortgageDropDownList();
+        }
     }
 }

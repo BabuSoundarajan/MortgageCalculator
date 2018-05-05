@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using MortgageCalculator.Api.Repos;
+﻿using MortgageCalculator.Api.Repos;
 using MortgageCalculator.Dto;
+using System.Collections.Generic;
 
 namespace MortgageCalculator.Api.Services
 {
@@ -24,6 +24,11 @@ namespace MortgageCalculator.Api.Services
         public List<Mortgage> GetAllMortgages()
         {
             return _mortgageRepo.GetAllMortgages();
+        }
+
+        public List<mortgageDropDownList> GetMortgageDropDownList()
+        {
+            return _mortgageRepo.GetMortgageDropDownList();
         }
     }
 }

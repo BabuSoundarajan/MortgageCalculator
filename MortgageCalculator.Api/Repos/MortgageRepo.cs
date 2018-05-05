@@ -9,6 +9,7 @@ namespace MortgageCalculator.Api.Repos
     {
         List<Mortgage> GetAllMortgages();
         int GetMonthDifference(DateTime startDate, DateTime endDate);
+        List<mortgageDropDownList> GetMortgageDropDownList();
     }
 
     public class MortgageRepo : IMortgageRepo
@@ -39,10 +40,33 @@ namespace MortgageCalculator.Api.Repos
             }
         }
 
+
         public int GetMonthDifference(DateTime startDate, DateTime endDate)
         {
             int monthsApart = 12 * (startDate.Year - endDate.Year) + startDate.Month - endDate.Month;
             return Math.Abs(monthsApart);
+        }
+
+        public List<mortgageDropDownList> GetMortgageDropDownList()
+        {
+            List<mortgageDropDownList> mortgageDropDownList = new List<mortgageDropDownList>();
+
+            var mortgages = GetAllMortgages();
+            mortgageDropDownList.Add(new mortgageDropDownList
+            {
+                Value = 0,
+                Text = "Select Mortgage Type"
+            });
+
+            foreach (var mortgage in mortgages)
+            {
+                mortgageDropDownList.Add(new mortgageDropDownList
+                {
+                    Value = mortgage.InterestRate,
+                    Text = string.Format("{0}%-{1}", mortgage.InterestRate, mortgage.Name)
+                });
+            }
+            return mortgageDropDownList;
         }
     }
 }

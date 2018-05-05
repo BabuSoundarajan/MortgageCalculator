@@ -10,16 +10,17 @@ using System.Web.Mvc;
 
 namespace MortgageCalculator.Web.Controllers
 {
-    public class HomeController : Controller
+    public class CalculatorController : Controller
     {
         HttpClient client = new HttpClient();
-        public HomeController()
+        public CalculatorController()
         {
             client.BaseAddress = new Uri(Settings.BaseUrl);
             client.DefaultRequestHeaders.Clear();
             //Define request data format  
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
+        // GET: Calculator
         public ActionResult Index()
         {
             IEnumerable<mortgageDropDownList> mortgageDropDownList = new List<mortgageDropDownList>();

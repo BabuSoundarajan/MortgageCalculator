@@ -1,7 +1,6 @@
-﻿/*body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}*/
+﻿body {
+    padding-bottom: 50px;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -17,11 +16,11 @@
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
-input,
+/*input,
 select,
 textarea {
     max-width: 280px;
-}
+}*/
 
 
 .navbar-brand {
@@ -33,3 +32,34 @@ textarea {
         display: inline-block !important;
         width: 20%;
     }
+
+.menu-bottom-border {
+    border-bottom: 4px solid #fc0;
+}
+
+.footer-content {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: #efefef;
+}
+
+footer {
+    padding-top: 15px;
+}
+
+
+.pad-t-35{
+    padding-top:35px;
+}
+
+.mar-t-7{
+    margin-top:7px;
+}
+
+
+.pagination > li > a, .pagination > .active > a {
+    background-color: #fc0;
+    border-color: #fc0;
+}

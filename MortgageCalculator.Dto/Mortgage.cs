@@ -24,8 +24,8 @@ namespace MortgageCalculator.Dto
 
     public enum MortgageType
     {
-        Variable,
-        Fixed
+        Fixed,
+        Variable
     }
 
     public enum InterestRepayment
@@ -33,4 +33,11 @@ namespace MortgageCalculator.Dto
         InterestOnly,
         PrincipalAndInterest
     }
+
+    public class mortgageDropDownList
+    {
+        public decimal Value { get; set; }
+        public string Text { get; set; }
+    }
+
 }

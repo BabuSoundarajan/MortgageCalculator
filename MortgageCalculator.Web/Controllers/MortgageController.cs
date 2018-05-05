@@ -1,4 +1,5 @@
 ﻿using MortgageCalculator.Dto;
+using MortgageCalculator.Web.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,24 +11,26 @@ using System.Web.Mvc;
 namespace MortgageCalculator.Web.Controllers
 {
     [OutputCache(CacheProfile = "Cache24Hrs")]
-    public class AdminController : Controller
+    public class MortgageController : Controller
     {
-        // GET: Admin
+
+        HttpClient client = new HttpClient();
+        public MortgageController()
+        {
+            client.BaseAddress = new Uri(Settings.BaseUrl);
+            client.DefaultRequestHeaders.Clear();
+            //Define request data format  
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        }
+        // GET: Mortgage
         public ActionResult Index()
         {
-            IEnumerable<Mortgage> mortgageList = null;
+            IEnumerable<Dto.Mortgage> mortgageList = null;
 
-            using (var client = new HttpClient())
+            using (client)
             {
-                client.BaseAddress = new Uri("http://localhost:49608/api/");
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                //HTTP GET
                 var responseTask = client.GetAsync("Mortgage");
                 responseTask.Wait();
-
-
 
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
@@ -35,16 +38,14 @@ namespace MortgageCalculator.Web.Controllers
                     var readTask = result.Content.ReadAsStringAsync();
                     readTask.Wait();
 
-
-                    mortgageList = JsonConvert.DeserializeObject<List<Mortgage>>(readTask.Result);
+                    mortgageList = JsonConvert.DeserializeObject<List<Dto.Mortgage>>(readTask.Result);
                 }
                 else //web api sent error response 
                 {
-                    mortgageList = Enumerable.Empty<Mortgage>();
+                    mortgageList = Enumerable.Empty<Dto.Mortgage>();
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }
-
             return View(mortgageList);
         }
     }

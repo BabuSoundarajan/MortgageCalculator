@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Mortgage List</h2>
+<h3>Mortgage List</h3>
 <br />
 
 <table class="table table-responsive table-bordered table-striped table-hover" id="mortgageList">
@@ -18,7 +18,7 @@
                @Html.DisplayNameFor(model => model.MortgageType)
            </th>
            <th>
-               @Html.DisplayNameFor(model => model.InterestRate)
+               @Html.DisplayNameFor(model => model.InterestRate)%
            </th>
            <th>
                @Html.DisplayNameFor(model => model.EffectiveStartDate)
@@ -75,5 +75,5 @@
 
 
 @section Scripts{
-    @Scripts.Render("~/Scripts/Admin/admin.js")
+    @Scripts.Render("~/Scripts/Mortgage/mortgage.js")
 }
