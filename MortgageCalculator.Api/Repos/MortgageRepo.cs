@@ -9,7 +9,7 @@ namespace MortgageCalculator.Api.Repos
     {
         List<Mortgage> GetAllMortgages();
         int GetMonthDifference(DateTime startDate, DateTime endDate);
-        List<mortgageDropDownList> GetMortgageDropDownList();
+        List<MortgageDropDownList> GetMortgageDropDownList();
     }
 
     public class MortgageRepo : IMortgageRepo
@@ -47,12 +47,12 @@ namespace MortgageCalculator.Api.Repos
             return Math.Abs(monthsApart);
         }
 
-        public List<mortgageDropDownList> GetMortgageDropDownList()
+        public List<MortgageDropDownList> GetMortgageDropDownList()
         {
-            List<mortgageDropDownList> mortgageDropDownList = new List<mortgageDropDownList>();
+            List<MortgageDropDownList> mortgageDropDownList = new List<MortgageDropDownList>();
 
-            var mortgages = GetAllMortgages();
-            mortgageDropDownList.Add(new mortgageDropDownList
+            List<Mortgage> mortgages = GetAllMortgages();
+            mortgageDropDownList.Add(new MortgageDropDownList
             {
                 Value = 0,
                 Text = "Select Mortgage Type"
@@ -60,10 +60,10 @@ namespace MortgageCalculator.Api.Repos
 
             foreach (var mortgage in mortgages)
             {
-                mortgageDropDownList.Add(new mortgageDropDownList
+                mortgageDropDownList.Add(new MortgageDropDownList
                 {
                     Value = mortgage.InterestRate,
-                    Text = string.Format("{0}%-{1}", mortgage.InterestRate, mortgage.Name)
+                    Text = string.Format("{0}% - {1}", mortgage.InterestRate, mortgage.Name)
                 });
             }
             return mortgageDropDownList;

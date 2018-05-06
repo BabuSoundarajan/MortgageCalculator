@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="591a9034-800b-4fee-8fce-98381b266665" name="babus@PROD-BABU 2018-05-06 20:04:31" runUser="GISLEN\babus" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="b4c310de-e1cc-4f72-a74f-b41c65c1ebfd">
+    <Deployment userDeploymentRoot="D:\Github\MortgageCalculator" useDefaultDeploymentRoot="false" runDeploymentRoot="babus_PROD-BABU 2018-05-06 20_04_31" />
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+    <Properties />
+  </TestSettings>
+  <Times creation="2018-05-06T20:04:31.1607845+05:30" queuing="2018-05-06T20:04:35.1316229+05:30" start="2018-05-06T20:04:35.4366902+05:30" finish="2018-05-06T20:05:00.8832398+05:30" />
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetMortgageById_InValidTest" storage="d:\github\mortgagecalculator\mortgagecalculator.unittest\bin\debug\mortgagecalculator.unittest.dll" id="20c886ae-4703-5822-c494-fa3905ba7b38">
+      <Execution id="09c47d18-7f5c-425c-94a7-3160c145e310" />
+      <TestMethod codeBase="D:/Github/MortgageCalculator/MortgageCalculator.UnitTest/bin/Debug/MortgageCalculator.UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MortgageCalculator.UnitTest.ApiController, MortgageCalculator.UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetMortgageById_InValidTest" />
+    </UnitTest>
+    <UnitTest name="GetAllMortgages_ValidTest" storage="d:\github\mortgagecalculator\mortgagecalculator.unittest\bin\debug\mortgagecalculator.unittest.dll" id="01248998-adab-b5b4-5b23-d4da8c8e1ce1">
+      <Execution id="9c0b1213-66a3-4ed5-af63-53829e5c8a7d" />
+      <TestMethod codeBase="D:/Github/MortgageCalculator/MortgageCalculator.UnitTest/bin/Debug/MortgageCalculator.UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MortgageCalculator.UnitTest.ApiController, MortgageCalculator.UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetAllMortgages_ValidTest" />
+    </UnitTest>
+    <UnitTest name="GetMortgageById_ValidTest" storage="d:\github\mortgagecalculator\mortgagecalculator.unittest\bin\debug\mortgagecalculator.unittest.dll" id="6cd05521-98d8-302a-ae7c-c4157dd6c6a8">
+      <Execution id="5f00d586-5e91-4903-8cf4-66e020a20660" />
+      <TestMethod codeBase="D:/Github/MortgageCalculator/MortgageCalculator.UnitTest/bin/Debug/MortgageCalculator.UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MortgageCalculator.UnitTest.ApiController, MortgageCalculator.UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetMortgageById_ValidTest" />
+    </UnitTest>
+    <UnitTest name="GetMortgageDropDownList_ValidTest" storage="d:\github\mortgagecalculator\mortgagecalculator.unittest\bin\debug\mortgagecalculator.unittest.dll" id="acd777c1-d062-7f51-ff6e-ba24c91c8156">
+      <Execution id="a11db42e-2f01-42e9-a23c-5dfa843e8763" />
+      <TestMethod codeBase="D:/Github/MortgageCalculator/MortgageCalculator.UnitTest/bin/Debug/MortgageCalculator.UnitTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="MortgageCalculator.UnitTest.ApiController, MortgageCalculator.UnitTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetMortgageDropDownList_ValidTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="01248998-adab-b5b4-5b23-d4da8c8e1ce1" executionId="9c0b1213-66a3-4ed5-af63-53829e5c8a7d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="20c886ae-4703-5822-c494-fa3905ba7b38" executionId="09c47d18-7f5c-425c-94a7-3160c145e310" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6cd05521-98d8-302a-ae7c-c4157dd6c6a8" executionId="5f00d586-5e91-4903-8cf4-66e020a20660" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="acd777c1-d062-7f51-ff6e-ba24c91c8156" executionId="a11db42e-2f01-42e9-a23c-5dfa843e8763" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9c0b1213-66a3-4ed5-af63-53829e5c8a7d" testId="01248998-adab-b5b4-5b23-d4da8c8e1ce1" testName="GetAllMortgages_ValidTest" computerName="PROD-BABU" duration="00:00:06.1447341" startTime="2018-05-06T20:04:35.6176356+05:30" endTime="2018-05-06T20:04:42.6421453+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9c0b1213-66a3-4ed5-af63-53829e5c8a7d">
+    </UnitTestResult>
+    <UnitTestResult executionId="09c47d18-7f5c-425c-94a7-3160c145e310" testId="20c886ae-4703-5822-c494-fa3905ba7b38" testName="GetMortgageById_InValidTest" computerName="PROD-BABU" duration="00:00:06.0136157" startTime="2018-05-06T20:04:42.6456448+05:30" endTime="2018-05-06T20:04:48.6646298+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09c47d18-7f5c-425c-94a7-3160c145e310">
+    </UnitTestResult>
+    <UnitTestResult executionId="5f00d586-5e91-4903-8cf4-66e020a20660" testId="6cd05521-98d8-302a-ae7c-c4157dd6c6a8" testName="GetMortgageById_ValidTest" computerName="PROD-BABU" duration="00:00:06.0065071" startTime="2018-05-06T20:04:48.6696707+05:30" endTime="2018-05-06T20:04:54.6882550+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f00d586-5e91-4903-8cf4-66e020a20660">
+    </UnitTestResult>
+    <UnitTestResult executionId="a11db42e-2f01-42e9-a23c-5dfa843e8763" testId="acd777c1-d062-7f51-ff6e-ba24c91c8156" testName="GetMortgageDropDownList_ValidTest" computerName="PROD-BABU" duration="00:00:06.0275557" startTime="2018-05-06T20:04:54.6922597+05:30" endTime="2018-05-06T20:05:00.7342052+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a11db42e-2f01-42e9-a23c-5dfa843e8763">
+    </UnitTestResult>
+  </Results>
+</TestRun>

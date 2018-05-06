@@ -1,6 +1,7 @@
 ﻿using MortgageCalculator.Api.Repos;
 using MortgageCalculator.Dto;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MortgageCalculator.Api.Services
 {
@@ -26,7 +27,13 @@ namespace MortgageCalculator.Api.Services
             return _mortgageRepo.GetAllMortgages();
         }
 
-        public List<mortgageDropDownList> GetMortgageDropDownList()
+        public Mortgage Get(int id)
+        {
+            return GetAllMortgages().FirstOrDefault(x => x.MortgageId == id);
+        }
+
+
+        public List<MortgageDropDownList> GetMortgageDropDownList()
         {
             return _mortgageRepo.GetMortgageDropDownList();
         }

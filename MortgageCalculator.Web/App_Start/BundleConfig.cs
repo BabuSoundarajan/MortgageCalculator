@@ -1,7 +1,9 @@
-﻿using System.Web.Optimization;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Web.Optimization;
 
 namespace MortgageCalculator.Web
 {
+    [ExcludeFromCodeCoverage]
     public class BundleConfig
     {
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
@@ -25,7 +27,8 @@ namespace MortgageCalculator.Web
                 "~/Scripts/Header/header.js",
                 "~/Scripts/DataTables/jquery.dataTables.js",
                 "~/Scripts/DataTables/dataTables.bootstrap.js",
-                "~/scripts/MaskMoney/jquery.maskMoney.min.js"
+                "~/scripts/MaskMoney/jquery.maskMoney.js",
+                "~/Scripts/Charts/Chart.bundle.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
@@ -33,6 +36,8 @@ namespace MortgageCalculator.Web
                       "~/Content/bootstrap-theme.css",
                       "~/Content/site.css",
                       "~/Content/DataTables/css/dataTables.bootstrap.css"));
+
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

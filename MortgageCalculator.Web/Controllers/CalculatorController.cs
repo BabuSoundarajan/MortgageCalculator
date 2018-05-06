@@ -23,7 +23,7 @@ namespace MortgageCalculator.Web.Controllers
         // GET: Calculator
         public ActionResult Index()
         {
-            IEnumerable<mortgageDropDownList> mortgageDropDownList = new List<mortgageDropDownList>();
+            IEnumerable<MortgageDropDownList> mortgageDropDownList = new List<MortgageDropDownList>();
 
             using (client)
             {
@@ -36,11 +36,11 @@ namespace MortgageCalculator.Web.Controllers
                     var readTask = result.Content.ReadAsStringAsync();
                     readTask.Wait();
 
-                    mortgageDropDownList = JsonConvert.DeserializeObject<List<mortgageDropDownList>>(readTask.Result);
+                    mortgageDropDownList = JsonConvert.DeserializeObject<List<MortgageDropDownList>>(readTask.Result);
                 }
                 else //web api sent error response 
                 {
-                    mortgageDropDownList = Enumerable.Empty<mortgageDropDownList>();
+                    mortgageDropDownList = Enumerable.Empty<MortgageDropDownList>();
                     ModelState.AddModelError(string.Empty, "Server error. Please contact administrator.");
                 }
             }

@@ -50,16 +50,40 @@ footer {
 }
 
 
-.pad-t-35{
-    padding-top:35px;
+.pad-t-35 {
+    padding-top: 35px;
 }
 
-.mar-t-7{
-    margin-top:7px;
+.pad-b-45 {
+    padding-bottom: 45px;
+}
+
+.mar-t-7 {
+    margin-top: 7px;
 }
 
 
 .pagination > li > a, .pagination > .active > a {
     background-color: #fc0;
     border-color: #fc0;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .result-summary * {
+        visibility: visible;
+    }
+
+    .result-summary {
+        position: absolute;
+        top: 40px;
+        left: 30px;
+    }
+}
+
+tbody.bold{
+    font-weight:bold;
 }

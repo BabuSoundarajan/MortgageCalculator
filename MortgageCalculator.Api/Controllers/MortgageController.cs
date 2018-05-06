@@ -1,32 +1,33 @@
 ﻿using MortgageCalculator.Api.Services;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
 
 namespace MortgageCalculator.Api.Controllers
 {
     public class MortgageController : ApiController
     {
+        private MortgageService mortgageService;
+        public MortgageController()
+        {
+            mortgageService = new MortgageService();
+        }
         // GET: api/Mortgage
         public IEnumerable<Dto.Mortgage> Get()
         {
-            var mortgageService = new MortgageService();
             return mortgageService.GetAllMortgages();
         }
 
-        // GET: api/Mortgage/5
+        //GET: api/Mortgage/5
         public Dto.Mortgage Get(int id)
         {
-            var mortgageService = new MortgageService();
-            return mortgageService.GetAllMortgages().FirstOrDefault(x => x.MortgageId == id);
+            return mortgageService.Get(id);
         }
+
 
         // GET: api/MortgageDropDownList
         [Route("api/MortgageDropDownList")]
-        public IEnumerable<Dto.mortgageDropDownList> GetMortgageDropDownList()
+        public IEnumerable<Dto.MortgageDropDownList> GetMortgageDropDownList()
         {
-
-            var mortgageService = new MortgageService();
             return mortgageService.GetMortgageDropDownList();
         }
     }

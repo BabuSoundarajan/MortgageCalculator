@@ -17,15 +17,15 @@ namespace MortgageCalculator.Dto
         public decimal CancellationFee { get; set; }
         public decimal EstablishmentFee { get; set; }
         public decimal InterestRate { get; set; }
-        public Guid SchemaIdentifier { get; internal set; }
+
         [DisplayName("RepaymentType")]
         public InterestRepayment InterestRepaymentType { get; set; }
     }
 
     public enum MortgageType
     {
-        Fixed,
-        Variable
+        Variable,
+        Fixed
     }
 
     public enum InterestRepayment
@@ -34,7 +34,7 @@ namespace MortgageCalculator.Dto
         PrincipalAndInterest
     }
 
-    public class mortgageDropDownList
+    public class MortgageDropDownList
     {
         public decimal Value { get; set; }
         public string Text { get; set; }
