@@ -16,9 +16,8 @@
         var TotalInterest;
         var TotalLoanAmount;
 
-
         //Validations
-        if (amount < 0 || interest <= 0 || years < 0) {
+        if (parseFloat(amount) < 0 || parseFloat(interest) <= 0 || parseFloat(years) <= 0) {
             $(".error-message").fadeIn("slow").removeClass("hidden");
             setTimeout(function () {
                 $(".error-message").fadeOut("slow");
