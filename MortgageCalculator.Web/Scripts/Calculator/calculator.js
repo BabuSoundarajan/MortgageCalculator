@@ -24,12 +24,24 @@
             }, 5000);
         }
         else {
+            resetFields();
+
             //Calculation
+           
             monthlyInterest = getMonthlyPayment(amount, (interest / 100) / 12, months);
             TotalInterest = (monthlyInterest * months).toFixed(2);
-            TotalLoanAmount = (parseFloat(TotalInterest) + parseFloat(amount)).toFixed(2);
+            var data = [
+                amount, TotalInterest
+            ];
+            TotalLoanAmount = ((parseFloat(TotalInterest) + parseFloat(amount)).toFixed(2));
             $(".result-summary").fadeIn("slow").removeClass("hidden");
-            $("#monthlyAmount, #monthlyLoanAmount").append(monthlyInterest);
+
+            monthlyInterest = parseFloat(monthlyInterest).toLocaleString(undefined, { maximumFractionDigits: 2 });
+            TotalInterest = parseFloat(TotalInterest).toLocaleString(undefined, { maximumFractionDigits: 2 });
+            TotalLoanAmount = parseFloat(TotalLoanAmount).toLocaleString(undefined, { maximumFractionDigits: 2 });
+            amount = parseFloat(amount).toLocaleString(undefined, { maximumFractionDigits: 2 });
+            $("#monthlyAmount, #monthlyLoanAmount").append(monthlyInterest.toLocaleString(undefined, { maximumFractionDigits:2 }));
+
             $("#totalInterestAmount").append(TotalInterest);
             $("#loanPeriod").append(years);
             $("#loanAmount").append(amount);
@@ -39,8 +51,7 @@
             $("#totalLoanInterest").append(TotalInterest);
             
 
-            resetFields();
-
+           
             $('html, body').animate({
                 scrollTop: $(".result-summary").offset().top
             }, 2000);
@@ -54,7 +65,7 @@
                 data: {
                     labels: ["Loan Amount", "Total Interest"],
                     datasets: [{
-                        data: [amount, TotalInterest],
+                        data: data,
                         backgroundColor: poolColors(2),
                         options: [
                             {
@@ -83,9 +94,18 @@
 
 
     function resetFields() {
+        $("#amount").maskMoney();
         $("#amount").val('');
         $("#mortgageType").val($("#mortgageType option:first").val());
         $("#years").val('');
+        $("#monthlyAmount, #monthlyLoanAmount").text('');
+        $("#totalInterestAmount").text('');
+        $("#loanPeriod").text('');
+        $("#loanAmount").text('');
+        $("#interestRate").text('');
+        $("#loanTerm").text('');
+        $("#totalLoanAmount").text('');
+        $("#totalLoanInterest").text('');
     }
 
     function getMonthlyPayment(amount, interest, period) {
